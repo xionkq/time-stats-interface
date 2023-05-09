@@ -26,16 +26,6 @@ import {
     // 实例化 provider
     constructor(private readonly dateService: DateService) {}
    
-    // // GET /user/users
-    // @Get('users')
-    // async findAll(): Promise<UserResponse<User[]>> {
-    //   return {
-    //     code: 200,
-    //     data: await this.userService.findAll(),
-    //     message: 'Success.',
-    //   };
-    // }
-   
     // GET /date/:user_name
     @Get(':user_name')
     async findOne(@Param('user_name') user_name: string): Promise<DateResponse<Date>> {
@@ -55,27 +45,4 @@ import {
         message: 'Success.',
       };
     }
-   
-    // // PUT /user/:_id
-    // @Put(':_id')
-    // async editOne(
-    //   @Param('_id') _id: string,
-    //   @Body() body: EditUserDTO,
-    // ): Promise<UserResponse> {
-    //   await this.userService.editOne(_id, body);
-    //   return {
-    //     code: 200,
-    //     message: 'Success.',
-    //   };
-    // }
-   
-    // // DELETE /user/:_id
-    // @Delete(':_id')
-    // async deleteOne(@Param('_id') _id: string): Promise<UserResponse> {
-    //   await this.userService.deleteOne(_id);
-    //   return {
-    //     code: 200,
-    //     message: 'Success.',
-    //   };
-    // }
   }

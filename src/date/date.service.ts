@@ -20,12 +20,6 @@ export class DateService {
   /**
    * mongoose 操作数据库是异步的，所以使用 async/await
    */
-  
-//   // 查找所有用户
-//   async findAll(): Promise<Date[]> {
-//     const users = await this.userModel.find();
-//     return users;
-//   }
  
   // 查找单个用户
   async findOne(uesr_name: string): Promise<Date | null> {
@@ -36,14 +30,4 @@ export class DateService {
   async addOne(body: CreateDateDTO): Promise<void> {
     await this.dateModel.create(body);
   }
- 
-//   // 编辑单个用户
-//   async editOne(_id: string, body: EditUserDTO): Promise<void> {
-//     await this.userModel.findByIdAndUpdate(_id, body);
-//   }
- 
-//   // 删除单个用户
-//   async deleteOne(_id: string): Promise<void> {
-//     await this.userModel.findByIdAndDelete(_id);
-//   }
 }
