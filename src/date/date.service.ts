@@ -6,7 +6,7 @@ import { Injectable } from '@nestjs/common';
  
 // 为了在 user.service 中操作数据库
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
  
 // 引入数据类型
 import { CreateDateDTO } from './date.dto';
@@ -22,8 +22,8 @@ export class DateService {
    */
  
   // 查找单个用户
-  async findOne(uesr_name: string): Promise<Date | null> {
-    return await this.dateModel.findOne({user_name:uesr_name});
+  async findOne(uesr_name: string): Promise<Date[] | null> {
+    return await this.dateModel.find({user_name:uesr_name});
   }
  
   // 添加单个用户

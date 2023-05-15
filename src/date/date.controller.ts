@@ -28,7 +28,7 @@ import {
    
     // GET /date/:user_name
     @Get(':user_name')
-    async findOne(@Param('user_name') user_name: string): Promise<DateResponse<Date>> {
+    async findOne(@Param('user_name') user_name: string): Promise<DateResponse<Date[]>> {
       return {
         code: 200,
         data: await this.dateService.findOne(user_name) || undefined,
